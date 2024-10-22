@@ -7,8 +7,7 @@ services:
     volumes:
       - ./frontend:/app
     working_dir: /app
-    # command: ["sh", "-c", "(npm install || echo \"npm install failed\") && npm run build && npm run start"]
-    command: ["sh", "-c", "(npm install || echo \"npm install failed\") && npm run build && npm run dev"]
+    command: ["sh", "-c", "(npm install || echo \"npm install failed\") && npm run build && npm run start"]
     depends_on:
       - backend
     ports:
@@ -22,7 +21,6 @@ services:
     volumes:
       - ./backend:/app
     working_dir: /app
-    # command: ["sh", "-c", "(npm install || echo \"npm install failed\") && npm run build && npm run start"]
     command: ["sh", "-c", "(npm install || echo \"npm install failed\") && npm run start:dev"]
     ports:
       - 3001:3001

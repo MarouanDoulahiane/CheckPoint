@@ -84,7 +84,8 @@ export class AppController {
         throw new HttpException('File uploaded, but Groq API call failed trying to parse the response, please try again!', HttpStatus.INTERNAL_SERVER_ERROR);
       }
     } catch (error) {
-      throw new HttpException('File uploaded, but Groq API call failed', HttpStatus.INTERNAL_SERVER_ERROR);
+      console.error('Error processing file:', error);
+      throw new HttpException('File upload failed', HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
 }
