@@ -39,21 +39,22 @@ export class AppController {
       const prompt = `
         Please return only a valid JSON structure with the following format:
         {
-          "firstName": null,
-          "lastName": null,
-          "contactInformation": null,
-          "linkedIn": null,
-          "github": null,
-          "email": null,
-          "phone": null,
-          "jobTitle": null,
-          "personalSummary": null,
-          "professionalExperience": null,
-          "technicalSkills": null,
-          "softSkills": null,
-          "education": null,
-          "certifications": null,
-          "languages": null
+          "firstName": any,
+          "lastName": any,
+          "contactInformation": any,
+          "linkedIn": any,
+          "github": any,
+          "email": any,
+          "phone": any,
+          "jobTitle": any,
+          "personalSummary": any,
+          "professionalExperience": any,
+          "technicalSkills": any,
+          "softSkills": any,
+          "education": any,
+          "certifications": any,
+          "languages": any,
+          "summary": any // generate a summary about the applicant based on the information provided
         }
         
         Do not include any extra text, comments, or explanations. The response should be JSON formatted and ready to be used in JSON.parse().
