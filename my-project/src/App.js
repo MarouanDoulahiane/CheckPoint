@@ -18,17 +18,21 @@ function App() {
     const formData = new FormData();
     formData.append("file", file);
 
-    const response = await fetch("http://localhost:3001/api/upload", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const response = await fetch("http://localhost:3001/api/upload", {
+        method: "POST",
+        body: formData,
+      });
 
-    if (response.ok) {
-      const data = await response.json();
-      console.log(data);
-      setGroqResponse(data.groqResponse);
-    } else {
-      alert("Error uploading file, reason: " + response.statusText);
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        setGroqResponse(data.groqResponse);
+      } else {
+        alert("Error uploading file, reason: " + response.statusText);
+      }
+    } catch (error) {
+      console.error("Error uploading file:", error);
     }
   }
 
